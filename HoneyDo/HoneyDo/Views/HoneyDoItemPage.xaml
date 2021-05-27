@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HoneyDo.Views.HoneyDoItemPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="20"
+                     Padding="15">
+
+            <Label Text="Name"
+                   FontSize="Medium" />
+            <Entry Text="{Binding HoneyDoItem.Description}"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   Margin="0,-10,0,0" />
+
+            <Label Text="Assigned To"
+                   FontSize="Medium" />
+            <Entry Text="{Binding HoneyDoItem.AssignedTo}"
+                   FontSize="Medium"
+                   Margin="0,-10,0,0" />
+
+            <Label Text="Priority"
+                   FontSize="Medium" />
+            <Entry Text="{Binding HoneyDoItem.Priority}"
+                   FontSize="Medium"
+                   Margin="0,-10,0,0" />
+
+            <Label Text="Category"
+                   FontSize="Medium" />
+            <Entry Text="{Binding HoneyDoItem.Category}"
+                   FontSize="Medium"
+                   Margin="0,-10,0,0" />
+
+            <Label Text="Due"
+                   FontSize="Medium" />
+            <DatePicker HorizontalOptions="Start"
+                        Date="{Binding HoneyDoItem.DueDate}"
+                        Margin="0,-10,0,0" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="SaveButton"
+                        Text="Save"
+                        HorizontalOptions="Start"
+                        Margin="25,0,0,25"
+                        WidthRequest="150"
+                        HeightRequest="50"
+                        Command="{Binding SaveItemCommand}" />
+                <Button x:Name="CompletedButton"
+                        Text="Completed"
+                        HorizontalOptions="Start"
+                        Margin="25,0,0,25"
+                        WidthRequest="150"
+                        HeightRequest="50"
+                        Command="{Binding DeleteItemCommand}" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
